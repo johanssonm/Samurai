@@ -1,0 +1,12 @@
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamuari.Data\bin\Debug\netcoreapp2.0\EfSamurai.Data.deps.json
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamuari.Data\bin\Debug\netcoreapp2.0\EfSamurai.Data.dll
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamuari.Data\bin\Debug\netcoreapp2.0\EfSamuari.Domain.dll
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamuari.Data\bin\Debug\netcoreapp2.0\EfSamuari.Domain.pdb
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamuari.Data\obj\Debug\netcoreapp2.0\EfSamurai.Data.csprojResolveAssemblyReference.cache
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamuari.Data\obj\Debug\netcoreapp2.0\EfSamurai.Data.csproj.CoreCompileInputs.cache
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamuari.Data\obj\Debug\netcoreapp2.0\EfSamurai.Data.AssemblyInfoInputs.cache
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamuari.Data\obj\Debug\netcoreapp2.0\EfSamurai.Data.AssemblyInfo.cs
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamuari.Data\obj\Debug\netcoreapp2.0\EfSamurai.Data.csproj.CopyComplete
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamuari.Data\bin\Debug\netcoreapp2.0\EfSamurai.Data.pdb
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamuari.Data\obj\Debug\netcoreapp2.0\EfSamurai.Data.dll
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamuari.Data\obj\Debug\netcoreapp2.0\EfSamurai.Data.pdb

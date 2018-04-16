@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 
-namespace Samurai
+namespace EfSamurai.Data
 {
     public class SamuraiContext : DbContext
     {
-        public DbSet<Samurai> Samurais { get; set; }
+        public DbSet<EfSamurai> Samurais { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
