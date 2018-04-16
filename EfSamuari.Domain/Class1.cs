@@ -2,7 +2,9 @@
 
 namespace EfSamuari.Domain
 {
-    public class Class1
+    public class Samurai
     {
+        public int ID { get; set; }
+
     }
 }
