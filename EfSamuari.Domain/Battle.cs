@@ -28,7 +28,8 @@ namespace EfSamurai
     {
         public int ID { get; set; }
         public DateTime Time { get; set; } = DateTime.Now;
-        public Battledescription Battledescription { get; set; }
+
+        public Battle Battle { get; set; }
 
     }
 
@@ -39,7 +40,7 @@ namespace EfSamurai
         public string Description { get; set; }
         public DateTime Timestamp { get; set; } = DateTime.Now;
 
-        public Battlelog Battlelog { get; set; }
+        public Battle Battle { get; set; }
 
         public Battledescription()
         {

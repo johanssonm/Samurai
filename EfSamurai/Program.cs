@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using EfSamurai;
+using Microsoft.EntityFrameworkCore.Internal;
 using static EfSamurai.QuoteType;
 
 namespace EfSamurai
@@ -9,13 +11,34 @@ namespace EfSamurai
     {
         static void Main(string[] args)
         {
-            // AddSamurais();
 
-            AddBattles();
+            //AddSamurais();
+            //AddBattles();
 
-            Console.WriteLine("Allt är kört");
+            FindSamurais();
+
+            Console.WriteLine();
+            Console.WriteLine("Allt är kört...");
             Console.ReadKey();
         }
+
+        static void FindSamurais()
+        {
+
+            using (var context = new SamuraiContext())
+            {
+
+                var samurais = context.Samurais.ToList();
+                var tmplist = samurais.ToList().OrderByOrdinal();
+
+                foreach (var tmp in tmplist)
+                {
+                    Console.WriteLine(tmp.Name);
+                }
+            }
+
+        }
+
 
         private static void AddBattles()
         {
@@ -35,7 +58,8 @@ namespace EfSamurai
                 Brutal = false,
                 Battlelog = new Battlelog(),
                 Start = DateTime.Now,
-                End = DateTime.Now.AddDays(7)
+                End = DateTime.Now.AddDays(7),
+                Battledescription = new Battledescription() { Title = "Kyoto", Description = "Battle of Kyoto" }
             };
 
             var battle2 = new Battle()
@@ -45,7 +69,8 @@ namespace EfSamurai
                 Battlelog = new Battlelog(),
                 Start = DateTime.Now,
                 End = DateTime.Now.AddDays(14),
-                
+                Battledescription = new Battledescription() { Title = "Hiroshima", Description = "Battle of Hiroshima" }
+
             };
 
 
