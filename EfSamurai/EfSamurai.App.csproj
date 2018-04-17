@@ -5,4 +5,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EfSamuari.Data\EfSamurai.Data.csproj" />
+    <ProjectReference Include="..\EfSamuari.Domain\EfSamuari.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
