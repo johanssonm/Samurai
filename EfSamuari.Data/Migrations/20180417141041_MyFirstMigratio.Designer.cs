@@ -11,8 +11,8 @@ using System;
 namespace EfSamurai.Data.Migrations
 {
     [DbContext(typeof(SamuraiContext))]
-    [Migration("20180417131832_MyFirstMigration123456")]
-    partial class MyFirstMigration123456
+    [Migration("20180417141041_MyFirstMigratio")]
+    partial class MyFirstMigratio
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,6 +26,8 @@ namespace EfSamurai.Data.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int?>("BattledescriptionID");
+
                     b.Property<int?>("BattlelogID");
 
                     b.Property<bool>("Brutal");
@@ -38,6 +40,8 @@ namespace EfSamurai.Data.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("BattledescriptionID");
+
                     b.HasIndex("BattlelogID");
 
                     b.ToTable("Battle");
@@ -45,8 +49,7 @@ namespace EfSamurai.Data.Migrations
 
             modelBuilder.Entity("EfSamurai.Battledescription", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("ID");
 
                     b.Property<string>("Description");
 
@@ -64,13 +67,9 @@ namespace EfSamurai.Data.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("BattledescriptionID");
-
                     b.Property<DateTime>("Time");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("BattledescriptionID");
 
                     b.ToTable("Battlelog");
                 });
@@ -139,16 +138,21 @@ namespace EfSamurai.Data.Migrations
 
             modelBuilder.Entity("EfSamurai.Battle", b =>
                 {
+                    b.HasOne("EfSamurai.Battledescription", "Battledescription")
+                        .WithMany()
+                        .HasForeignKey("BattledescriptionID");
+
                     b.HasOne("EfSamurai.Battlelog", "Battlelog")
                         .WithMany()
                         .HasForeignKey("BattlelogID");
                 });
 
-            modelBuilder.Entity("EfSamurai.Battlelog", b =>
+            modelBuilder.Entity("EfSamurai.Battledescription", b =>
                 {
-                    b.HasOne("EfSamurai.Battledescription", "Battledescription")
-                        .WithMany()
-                        .HasForeignKey("BattledescriptionID");
+                    b.HasOne("EfSamurai.Battlelog", "Battlelog")
+                        .WithOne("Battledescription")
+                        .HasForeignKey("EfSamurai.Battledescription", "ID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("EfSamurai.Samurai", b =>

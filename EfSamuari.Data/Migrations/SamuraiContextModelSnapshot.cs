@@ -48,8 +48,7 @@ namespace EfSamurai.Data.Migrations
 
             modelBuilder.Entity("EfSamurai.Battledescription", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("ID");
 
                     b.Property<string>("Description");
 
@@ -67,13 +66,9 @@ namespace EfSamurai.Data.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("BattledescriptionID");
-
                     b.Property<DateTime>("Time");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("BattledescriptionID");
 
                     b.ToTable("Battlelog");
                 });
@@ -151,11 +146,12 @@ namespace EfSamurai.Data.Migrations
                         .HasForeignKey("BattlelogID");
                 });
 
-            modelBuilder.Entity("EfSamurai.Battlelog", b =>
+            modelBuilder.Entity("EfSamurai.Battledescription", b =>
                 {
-                    b.HasOne("EfSamurai.Battledescription", "Battledescription")
-                        .WithMany()
-                        .HasForeignKey("BattledescriptionID");
+                    b.HasOne("EfSamurai.Battlelog", "Battlelog")
+                        .WithOne("Battledescription")
+                        .HasForeignKey("EfSamurai.Battledescription", "ID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("EfSamurai.Samurai", b =>

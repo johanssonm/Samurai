@@ -39,6 +39,8 @@ namespace EfSamurai
         public string Description { get; set; }
         public DateTime Timestamp { get; set; } = DateTime.Now;
 
+        public Battlelog Battlelog { get; set; }
+
         public Battledescription()
         {
                       
