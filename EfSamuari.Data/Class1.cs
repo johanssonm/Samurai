@@ -5,6 +5,7 @@ namespace EfSamurai
     public class SamuraiContext : DbContext
     {
         public DbSet<Samurai> Samurais { get; set; }
+        public DbSet<Battle> Battle { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -25,7 +25,8 @@ namespace EfSamurai
                 Brutal = true,
                 Battlelog = new Battlelog(),
                 Start = DateTime.Now,
-                End = DateTime.Now.AddDays(1)
+                End = DateTime.Now.AddDays(1),
+                Battledescription = new Battledescription() { Title = "Tokyo", Description = "Battle of Tokyo"}
             };
 
             var battle1 = new Battle()
@@ -34,7 +35,7 @@ namespace EfSamurai
                 Brutal = false,
                 Battlelog = new Battlelog(),
                 Start = DateTime.Now,
-                End = DateTime.Now.AddDays(14)
+                End = DateTime.Now.AddDays(7)
             };
 
             var battle2 = new Battle()
@@ -43,13 +44,14 @@ namespace EfSamurai
                 Brutal = true,
                 Battlelog = new Battlelog(),
                 Start = DateTime.Now,
-                End = DateTime.Now.AddDays(14)
+                End = DateTime.Now.AddDays(14),
+                
             };
 
 
             using (var context = new SamuraiContext())
             {
-                context.Samurais.AddRange(battle, battle1, battle2);
+                context.Battle.AddRange(battle, battle1, battle2);
                 context.SaveChanges();
             }
         }
@@ -61,7 +63,6 @@ namespace EfSamurai
                 Name = "Zelda",
                 Quote = new Quote() {Text = "Citatet", Type = Awesome },
                 Hairstyle = HairStyle.Chonmage,
-                Battle = new Battle(),
                 Identity = new SecretIdentity() { Name = "Perciwall" },
             };
 
@@ -70,7 +71,6 @@ namespace EfSamurai
                 Name = "Quiff",
                 Quote = new Quote() { Text = "Citatet", Type = Cheesy },
                 Hairstyle = HairStyle.Western,
-                Battle = new Battle(),
                 Identity = new SecretIdentity() { Name = "Frank" },
             };
 
@@ -80,7 +80,6 @@ namespace EfSamurai
                 Quote = new Quote() { Text = "Citatet", Type = Lame },
                 Hairstyle = HairStyle.Oicho,
                 Identity = new SecretIdentity() { Name = "Kasaban" },
-                Battle = new Battle()
             };
 
 

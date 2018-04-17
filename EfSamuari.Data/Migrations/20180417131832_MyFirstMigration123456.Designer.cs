@@ -11,9 +11,10 @@ using System;
 namespace EfSamurai.Data.Migrations
 {
     [DbContext(typeof(SamuraiContext))]
-    partial class SamuraiContextModelSnapshot : ModelSnapshot
+    [Migration("20180417131832_MyFirstMigration123456")]
+    partial class MyFirstMigration123456
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,8 +25,6 @@ namespace EfSamurai.Data.Migrations
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<int?>("BattledescriptionID");
 
                     b.Property<int?>("BattlelogID");
 
@@ -38,8 +37,6 @@ namespace EfSamurai.Data.Migrations
                     b.Property<DateTime>("Start");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("BattledescriptionID");
 
                     b.HasIndex("BattlelogID");
 
@@ -142,10 +139,6 @@ namespace EfSamurai.Data.Migrations
 
             modelBuilder.Entity("EfSamurai.Battle", b =>
                 {
-                    b.HasOne("EfSamurai.Battledescription", "Battledescription")
-                        .WithMany()
-                        .HasForeignKey("BattledescriptionID");
-
                     b.HasOne("EfSamurai.Battlelog", "Battlelog")
                         .WithMany()
                         .HasForeignKey("BattlelogID");
