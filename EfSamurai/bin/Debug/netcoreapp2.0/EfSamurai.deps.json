@@ -6,13 +6,13 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.0": {
-      "EfSamurai.App/1.0.0": {
+      "EfSamurai/1.0.0": {
         "dependencies": {
           "EfSamuari.Domain": "1.0.0",
           "EfSamurai.Data": "1.0.0"
         },
         "runtime": {
-          "EfSamurai.App.dll": {}
+          "EfSamurai.dll": {}
         }
       },
       "Microsoft.CSharp/4.4.0": {},
@@ -461,7 +461,7 @@
     }
   },
   "libraries": {
-    "EfSamurai.App/1.0.0": {
+    "EfSamurai/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

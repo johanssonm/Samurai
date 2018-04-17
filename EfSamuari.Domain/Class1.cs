@@ -8,12 +8,10 @@ namespace EfSamurai
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public List<Quote> Quote { get; set; }
-
+        public Quote Quote { get; set; }
         public HairStyle Hairstyle { get; set; }
-
         public SecretIdentity Identity { get; set; }
-
+        public Battle Battle { get; set; }
         public List<SamuraiBattle> SamuraisBattles { get; set; }
 
 
