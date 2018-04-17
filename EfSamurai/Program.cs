@@ -14,8 +14,8 @@ namespace EfSamurai
 
             //AddSamurais();
             //AddBattles();
-
-            FindSamurais();
+            //FindSamurais();
+            SearchforSamurai("Frank");
 
             Console.WriteLine();
             Console.WriteLine("Allt är kört...");
@@ -29,15 +29,40 @@ namespace EfSamurai
             {
 
                 var samurais = context.Samurais.ToList();
-                var tmplist = samurais.ToList().OrderByOrdinal();
+                var samuraisinorder = samurais.OrderByDescending(x => x.Name).Reverse();
+                var samuraisbyid = samurais.OrderByDescending(x => x.ID).Reverse();
 
-                foreach (var tmp in tmplist)
+                foreach (var tmp in samuraisbyid)
                 {
-                    Console.WriteLine(tmp.Name);
+                    Console.WriteLine(tmp.ID + " " + tmp.Name);
                 }
             }
 
         }
+
+        static void SearchforSamurai(string name)
+        {
+
+            using (var context = new SamuraiContext())
+            {
+
+                var samurainames = context.Samurais.Where(x => x.Identity.Name == name).ToList();
+
+                foreach (var samurai in samurainames)
+                {
+                    
+                }
+
+
+                foreach (var tmp in samurainames)
+                {
+                    // Console.WriteLine("{0} - {1} - {2}", tmp.ID, tmp.Name);
+                    tmp.Identity.SamuraiID.ToString();
+                }
+            }
+
+        }
+
 
 
         private static void AddBattles()
