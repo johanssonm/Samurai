@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net.Http.Headers;
 
 namespace EfSamurai
 {
@@ -15,7 +14,7 @@ namespace EfSamurai
 
         public SecretIdentity Identity { get; set; }
 
-        public List<SamuraisBattles> SamuraisBattles { get; set; }
+        public List<SamuraiBattle> SamuraisBattles { get; set; }
 
 
     }
@@ -66,7 +65,7 @@ namespace EfSamurai
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
 
-        public List<SamuraisBattles> SamuraisBattles { get; set; }
+        public List<SamuraiBattle> SamuraisBattles { get; set; }
 
         public Battlelog Battlelog { get; set; }
         
@@ -89,9 +88,11 @@ namespace EfSamurai
 
     }
 
-    public class SamuraisBattles
+    public class SamuraiBattle
     {
-        public int ID { get; set; }
+
+        public int SamuraiID { get; set; }
+        public int BattleID { get; set; }
 
         public Samurai Samurai { get; set; }
         public Battle Battle { get; set; }
