@@ -9,3 +9,8 @@ C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamurai\obj\Debug
 C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamurai\obj\Debug\netcoreapp2.0\EfSamurai.AssemblyInfo.cs
 C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamurai\obj\Debug\netcoreapp2.0\EfSamurai.dll
 C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamurai\obj\Debug\netcoreapp2.0\EfSamurai.pdb
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamurai\bin\Debug\netcoreapp2.0\EfSamuari.Domain.dll
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamurai\bin\Debug\netcoreapp2.0\EfSamurai.Data.dll
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamurai\bin\Debug\netcoreapp2.0\EfSamurai.Data.pdb
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamurai\bin\Debug\netcoreapp2.0\EfSamuari.Domain.pdb
+C:\Users\Mattias\Dropbox\AcceleratedLearning\Samurai\Samurai\EfSamurai\obj\Debug\netcoreapp2.0\EfSamurai.csproj.CopyComplete
