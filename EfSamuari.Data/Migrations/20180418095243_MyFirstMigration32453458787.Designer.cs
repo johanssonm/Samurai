@@ -11,9 +11,10 @@ using System;
 namespace EfSamurai.Data.Migrations
 {
     [DbContext(typeof(SamuraiContext))]
-    partial class SamuraiContextModelSnapshot : ModelSnapshot
+    [Migration("20180418095243_MyFirstMigration32453458787")]
+    partial class MyFirstMigration32453458787
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -98,13 +99,7 @@ namespace EfSamurai.Data.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("SamuraiInfoName");
-
-                    b.Property<string>("SamuraiInfoRealName");
-
                     b.HasKey("ID");
-
-                    b.HasIndex("SamuraiInfoName", "SamuraiInfoRealName");
 
                     b.ToTable("Samurais");
                 });
@@ -120,19 +115,6 @@ namespace EfSamurai.Data.Migrations
                     b.HasIndex("SamuraiID");
 
                     b.ToTable("SamuraiBattle");
-                });
-
-            modelBuilder.Entity("EfSamurai.SamuraiInfo", b =>
-                {
-                    b.Property<string>("Name");
-
-                    b.Property<string>("RealName");
-
-                    b.Property<string>("BattleNames");
-
-                    b.HasKey("Name", "RealName");
-
-                    b.ToTable("SamuraiInfo");
                 });
 
             modelBuilder.Entity("EfSamurai.SecretIdentity", b =>
@@ -169,13 +151,6 @@ namespace EfSamurai.Data.Migrations
                     b.HasOne("EfSamurai.Samurai")
                         .WithMany("Quote")
                         .HasForeignKey("SamuraiID");
-                });
-
-            modelBuilder.Entity("EfSamurai.Samurai", b =>
-                {
-                    b.HasOne("EfSamurai.SamuraiInfo", "SamuraiInfo")
-                        .WithMany()
-                        .HasForeignKey("SamuraiInfoName", "SamuraiInfoRealName");
                 });
 
             modelBuilder.Entity("EfSamurai.SamuraiBattle", b =>

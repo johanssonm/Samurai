@@ -18,6 +18,7 @@ namespace EfSamurai
         {
 
             modelBuilder.Entity<SamuraiBattle>().HasKey(x => new { x.BattleID, x.SamuraiID });
+            modelBuilder.Entity<SamuraiInfo>().HasKey(x => new { x.Name, x.RealName });
 
         }
 

@@ -163,6 +163,28 @@
           "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
         }
       },
+      "Microsoft.Extensions.Logging.Console/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.1",
+          "Microsoft.Extensions.Logging": "2.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Console.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Console.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.EventLog/2.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net461/Microsoft.Extensions.Logging.EventLog.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Extensions.Logging.EventLog.dll": {}
+        }
+      },
       "Microsoft.Extensions.Options/2.0.1": {
         "type": "package",
         "dependencies": {
@@ -919,7 +941,9 @@
           "EfSamuari.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.2",
-          "Microsoft.EntityFrameworkCore.Tools": "2.0.2"
+          "Microsoft.EntityFrameworkCore.Tools": "2.0.2",
+          "Microsoft.Extensions.Logging.Console": "2.0.1",
+          "Microsoft.Extensions.Logging.EventLog": "2.0.1"
         },
         "compile": {
           "bin/placeholder/EfSamurai.Data.dll": {}
@@ -1139,6 +1163,28 @@
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
         "microsoft.extensions.logging.abstractions.2.0.1.nupkg.sha512",
         "microsoft.extensions.logging.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Logging.Console/2.0.1": {
+      "sha512": "lbAWSy/Iwj584V6TAcKK8DU37IDOO7l+fMfktTsQWs14a4NXF/S0DjdbeJ5QoGR3aQiIlKJvNoCPoKLO9XeBMQ==",
+      "type": "package",
+      "path": "microsoft.extensions.logging.console/2.0.1",
+      "files": [
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Console.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Console.xml",
+        "microsoft.extensions.logging.console.2.0.1.nupkg.sha512",
+        "microsoft.extensions.logging.console.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Logging.EventLog/2.0.1": {
+      "sha512": "g7iflNcvFWGhxih5pjBjIrjo5FHF92ClplwDi9j5PRCIr2uBVb5sG3fGTGx+s9Gk1fQjbmIzUrU4F7t1xpLW0Q==",
+      "type": "package",
+      "path": "microsoft.extensions.logging.eventlog/2.0.1",
+      "files": [
+        "lib/net461/Microsoft.Extensions.Logging.EventLog.dll",
+        "lib/net461/Microsoft.Extensions.Logging.EventLog.xml",
+        "microsoft.extensions.logging.eventlog.2.0.1.nupkg.sha512",
+        "microsoft.extensions.logging.eventlog.nuspec"
       ]
     },
     "Microsoft.Extensions.Options/2.0.1": {
@@ -3439,9 +3485,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mattias\\Dropbox\\AcceleratedLearning\\Samurai\\Samurai\\EfSamurai\\EfSamurai.App.csproj",
-      "projectName": "EfSamurai.App",
-      "projectPath": "C:\\Users\\Mattias\\Dropbox\\AcceleratedLearning\\Samurai\\Samurai\\EfSamurai\\EfSamurai.App.csproj",
+      "projectUniqueName": "C:\\Users\\Mattias\\Dropbox\\AcceleratedLearning\\Samurai\\Samurai\\EfSamurai\\EfSamurai.csproj",
+      "projectName": "EfSamurai",
+      "projectPath": "C:\\Users\\Mattias\\Dropbox\\AcceleratedLearning\\Samurai\\Samurai\\EfSamurai\\EfSamurai.csproj",
       "packagesPath": "C:\\Users\\Mattias\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Mattias\\Dropbox\\AcceleratedLearning\\Samurai\\Samurai\\EfSamurai\\obj\\",
       "projectStyle": "PackageReference",
@@ -3493,5 +3539,17 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Extensions.Logging.EventLog 2.0.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Extensions.Logging.EventLog",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    }
+  ]
 }

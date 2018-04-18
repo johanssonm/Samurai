@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "8cde1325b6c65e36970bdc8cbf9579d30936bb51"
+    "signature": "d434600fc31d758ef52ec593f26e53159076beaf"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,7 +11,9 @@
           "EfSamuari.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.2",
-          "Microsoft.EntityFrameworkCore.Tools": "2.0.2"
+          "Microsoft.EntityFrameworkCore.Tools": "2.0.2",
+          "Microsoft.Extensions.Logging.Console": "2.0.1",
+          "Microsoft.Extensions.Logging.EventLog": "2.0.1"
         },
         "runtime": {
           "EfSamurai.Data.dll": {}
@@ -117,6 +119,20 @@
       "Microsoft.Extensions.Logging.Abstractions/2.0.1": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Console/2.0.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.1",
+          "Microsoft.Extensions.Logging": "2.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Console.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.EventLog/2.0.1": {
+        "runtime": {
+          "lib/net461/Microsoft.Extensions.Logging.EventLog.dll": {}
         }
       },
       "Microsoft.Extensions.Options/2.0.1": {
@@ -547,6 +563,20 @@
       "sha512": "sha512-DzCKlMdXOysXFDBXgNnxFlpSj5AOdMkUqKEjKT1n+japTxhQ3e3MaGODZGtbIj9ezykRs9oEBGmdSHHfh4oNVA==",
       "path": "microsoft.extensions.logging.abstractions/2.0.1",
       "hashPath": "microsoft.extensions.logging.abstractions.2.0.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Console/2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lbAWSy/Iwj584V6TAcKK8DU37IDOO7l+fMfktTsQWs14a4NXF/S0DjdbeJ5QoGR3aQiIlKJvNoCPoKLO9XeBMQ==",
+      "path": "microsoft.extensions.logging.console/2.0.1",
+      "hashPath": "microsoft.extensions.logging.console.2.0.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.EventLog/2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-g7iflNcvFWGhxih5pjBjIrjo5FHF92ClplwDi9j5PRCIr2uBVb5sG3fGTGx+s9Gk1fQjbmIzUrU4F7t1xpLW0Q==",
+      "path": "microsoft.extensions.logging.eventlog/2.0.1",
+      "hashPath": "microsoft.extensions.logging.eventlog.2.0.1.nupkg.sha512"
     },
     "Microsoft.Extensions.Options/2.0.1": {
       "type": "package",

@@ -11,8 +11,8 @@ using System;
 namespace EfSamurai.Data.Migrations
 {
     [DbContext(typeof(SamuraiContext))]
-    [Migration("20180417142538_MyFirstMigration1111")]
-    partial class MyFirstMigration1111
+    [Migration("20180418124151_MyFirstMigration324534587876665234234")]
+    partial class MyFirstMigration324534587876665234234
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,9 +51,9 @@ namespace EfSamurai.Data.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<DateTime>("Timestamp");
+                    b.Property<string>("Event");
 
-                    b.Property<string>("Title");
+                    b.Property<DateTime>("Timestamp");
 
                     b.HasKey("ID");
 
@@ -77,11 +77,15 @@ namespace EfSamurai.Data.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int?>("SamuraiID");
+
                     b.Property<string>("Text");
 
                     b.Property<int>("Type");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("SamuraiID");
 
                     b.ToTable("Quote");
                 });
@@ -95,11 +99,13 @@ namespace EfSamurai.Data.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<int?>("QuoteID");
+                    b.Property<string>("SamuraiInfoName");
+
+                    b.Property<string>("SamuraiInfoRealName");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("QuoteID");
+                    b.HasIndex("SamuraiInfoName", "SamuraiInfoRealName");
 
                     b.ToTable("Samurais");
                 });
@@ -115,6 +121,19 @@ namespace EfSamurai.Data.Migrations
                     b.HasIndex("SamuraiID");
 
                     b.ToTable("SamuraiBattle");
+                });
+
+            modelBuilder.Entity("EfSamurai.SamuraiInfo", b =>
+                {
+                    b.Property<string>("Name");
+
+                    b.Property<string>("RealName");
+
+                    b.Property<string>("BattleNames");
+
+                    b.HasKey("Name", "RealName");
+
+                    b.ToTable("SamuraiInfo");
                 });
 
             modelBuilder.Entity("EfSamurai.SecretIdentity", b =>
@@ -146,11 +165,18 @@ namespace EfSamurai.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("EfSamurai.Quote", b =>
+                {
+                    b.HasOne("EfSamurai.Samurai")
+                        .WithMany("Quote")
+                        .HasForeignKey("SamuraiID");
+                });
+
             modelBuilder.Entity("EfSamurai.Samurai", b =>
                 {
-                    b.HasOne("EfSamurai.Quote", "Quote")
+                    b.HasOne("EfSamurai.SamuraiInfo", "SamuraiInfo")
                         .WithMany()
-                        .HasForeignKey("QuoteID");
+                        .HasForeignKey("SamuraiInfoName", "SamuraiInfoRealName");
                 });
 
             modelBuilder.Entity("EfSamurai.SamuraiBattle", b =>
